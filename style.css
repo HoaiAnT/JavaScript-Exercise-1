@@ -1,0 +1,38 @@
+h1{
+    font-size:55px;
+}
+table{
+    border-style:hidden;
+    background-color:rgb(93, 132, 98);
+    border-radius:20px;
+    width:8%;
+    height:12cm;
+    padding-left:15px;
+}
+button{
+    font-size:45px;
+    font-weight:bold;
+    display:flex;
+    flex-direction:row;
+    padding-bottom: 5px;
+    padding-top:5px;
+    padding-left:20px;
+    padding-right:20px;
+    border-radius:15px;
+    border-style:hidden;
+    margin-bottom:4px;
+}
+ 
+.space{
+    width:7cm;
+    height:0.5cm;
+    padding:20px;
+}
+.substract{
+    padding-right:29px;
+}
+.divi{
+    padding-right:30px;
+    margin-right:15px;
+}
+
