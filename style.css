@@ -9,15 +9,15 @@ table{
     height:12cm;
     padding-left:15px;
 }
-button{
+input{
     font-size:45px;
     font-weight:bold;
     display:flex;
     flex-direction:row;
     padding-bottom: 5px;
     padding-top:5px;
-    padding-left:20px;
-    padding-right:20px;
+    padding-left:25px;
+    padding-right:25px;
     border-radius:15px;
     border-style:hidden;
     margin-bottom:4px;
@@ -27,6 +27,7 @@ button{
     width:7cm;
     height:0.5cm;
     padding:20px;
+    font-size:25px;
 }
 .substract{
     padding-right:29px;
@@ -35,4 +36,7 @@ button{
     padding-right:30px;
     margin-right:15px;
 }
-
+.cli .operator {
+    color:white;
+    background-color:red;
+}
