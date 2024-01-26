@@ -1,60 +1,31 @@
+document.getElementById('result').addEventListener('input', function(e) {
+    let input = e.target.value; 
+    let input = prompt("Type here")
+    console.log("Input: ", input); 
 
-function calculator(){
-    let n1 = parseFloat(prompt(`enter a number`));
-    let calcOp = prompt(`Enter an operation: + - / *`);
-    let n2 = parseFloat(prompt(`enter another number`));
-    let sum = result;
-
-    switch (calcOp) {
-        case '+':
-            sum = n1 + n2;
-        break;
-    
-        default:
-            return 'that is not a supported operation';
-            break;
+    if (e.key === "Enter") { 
+        try {
+            let result;
+            switch(input) {
+                case 'plus':
+                    result = num + num;
+                    break;
+                case 'subtract':
+                    result = num - num;
+                    break;
+                case 'multiply':
+                    result = num * num;
+                    break;
+                case 'divide':
+                    result = num / num;
+                    break;
+                default:
+                    result = eval(input);  
+            }
+            console.log("Result: ", result);  
+        } catch (error) {
+            console.error("An error occurred: ", error);
+        }
     }
+});
 
-    document.write(`${n1} ${calcOp} ${n2} = ${sum}`);
-}
-
-calculator();
-
-let num1 = Number(prompt('enter a number'));
-
-function dis(val) { 
-    document.getElementById("result").value += val 
-} 
-
-function myFunction(event) { 
-    if (event.key == '0' || event.key == '1' 
-        || event.key == '2' || event.key == '3' 
-        || event.key == '4' || event.key == '5' 
-        || event.key == '6' || event.key == '7' 
-        || event.key == '8' || event.key == '9' 
-        || event.key == '+' || event.key == '-' 
-        || event.key == '*' || event.key == '/') 
-        document.getElementById("result").value += event.key; 
-} 
-
-var cal = document.getElementById("calcu"); 
-cal.onkeyup = function (event) { 
-    if (event.keyCode === 13) { 
-        console.log("Enter"); 
-        let x = document.getElementById("result").value 
-        console.log(x); 
-        solve(); 
-    } 
-} 
-
-// Function that evaluates the digit and return result 
-function solve() { 
-    let x = document.getElementById("result").value 
-    let y = math.evaluate(x) 
-    document.getElementById("result").value = y 
-} 
-
-// Function that clear the display 
-function clr() { 
-    document.getElementById("result").value = "" 
-} 
