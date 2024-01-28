@@ -1,31 +1,49 @@
-document.getElementById('result').addEventListener('input', function(e) {
-    let input = e.target.value; 
-    let input = prompt("Type here")
-    console.log("Input: ", input); 
+document.addEventListener('DOMContentLoaded', function() {
+    const result = document.getElementById('result');
 
-    if (e.key === "Enter") { 
-        try {
+    function myFunction(_event) {
+        if (e.key === "Enter") {
             let result;
-            switch(input) {
-                case 'plus':
-                    result = num + num;
-                    break;
-                case 'subtract':
-                    result = num - num;
-                    break;
-                case 'multiply':
-                    result = num * num;
-                    break;
-                case 'divide':
-                    result = num / num;
-                    break;
-                default:
-                    result = eval(input);  
+                switch(input) {
+                    case 'plus':
+                        result = number + factor;
+                        break;
+                    case 'minus':
+                        result = number - factor;
+                        break;
+                    case 'multiplier':
+                        result = number * factor;
+                        break;
+                    case 'divide':
+                        result = number / factor;
+                        break;
+                    default:
+                        result = eval(input);
+                }
             }
-            console.log("Result: ", result);  
-        } catch (error) {
-            console.error("An error occurred: ", error);
+    }
+
+    function myFunction(event) {
+        const value = event.target.value;
+        if (value === '=') {
+            try {
+                result.value = eval(result.value);
+            } catch (e) {
+                result.value = 'Error';
+            }
+        } else if (value === 'C') {
+            result.value = '';
+        } else {
+            result.value += value;
         }
     }
+
+    document.querySelectorAll('.button').forEach(button => {
+        if (button.value === '=') {
+            button.addEventListener('click', evaluateExpression);
+        } else {
+            button.addEventListener('click', myFunction);
+        }
+    });
 });
 
